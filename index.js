@@ -98,6 +98,10 @@ const runSearch = () => {
                     viewEmployees();
                     break;
 
+                // case 'ADD_EMPLOYEE':
+                //     addEmployee();
+                //     break;
+                    
                 case 'VIEW_ROLES':
                     viewRoles();
                     break;
@@ -135,6 +139,57 @@ const runSearch = () => {
         });
     };
 
+    // const addEmployee = async() => {
+    //     connection.query('SELECT * FROM company_db.roles', (err, res) => {
+    //         if (err) throw err;
+    //         // Log all results of the SELECT statement
+    //         // console.log(res);
+    //         const roles = res.map(row => {
+    //             return{value: row.role_id,
+    //             name: row.name}
+    //         })
+
+    //         inquirer
+    //         .prompt([
+    //             {
+    //             name: 'title',
+    //             type: 'input',
+    //             message: 'What is the Title of the new role?',
+    //             },
+    //             {
+    //             name: 'salary',
+    //             type: 'input',
+    //             message: 'What is the Salary of the new role?',
+    //             },
+    //             {
+    //             name: 'dept_id',
+    //             type: 'list',
+    //             message: 'Which department is the new Role in?',
+    //             choices: departments
+    //             },
+    //         ])
+    //         .then((answer) => {
+    //             console.log('answer:', answer)
+                
+    //             // when finished prompting, insert a new item into the db with that info
+    //             connection.query(
+    //             'INSERT INTO company_db.roles SET ?',
+    //             {
+    //                 title: answer.title,
+    //                 salary: answer.salary,
+    //                 dept_id: answer.dept_id
+    //             },
+    //             (err) => {
+    //                 if (err) throw err;
+    //                 console.log('The new Role was added successfully!');
+    //                 // re-prompt the user for if they want to complete another task
+    //                 runSearch();
+    //             }
+    //             );
+    //         });
+    //     });
+    // };
+
     const viewRoles = () => {
         console.log('Selecting all roles...\n');
         connection.query('SELECT * FROM company_db.roles', (err, res) => {
@@ -155,49 +210,45 @@ const runSearch = () => {
                 name: row.name}
             })
 
-        inquirer
-        .prompt([
-            {
-            name: 'title',
-            type: 'input',
-            message: 'What is the Title of the new role?',
-            },
-            {
-            name: 'salary',
-            type: 'input',
-            message: 'What is the Salary of the new role?',
-            },
-            {
-            name: 'dept_id',
-            type: 'list',
-            message: 'Which department is the new Role in?',
-            choices: departments
-            },
-        ])
-        .then((answer) => {
-            console.log('answer:', answer)
-            
-            // when finished prompting, insert a new item into the db with that info
-            connection.query(
-            'INSERT INTO company_db.roles SET ?',
-            {
-                title: answer.title,
-                salary: answer.salary,
-                dept_id: answer.dept_id
-            },
-            (err) => {
-                if (err) throw err;
-                console.log('The new Role was added successfully!');
-                // re-prompt the user for if they want to complete another task
-                runSearch();
-            }
-            );
+            inquirer
+            .prompt([
+                {
+                name: 'title',
+                type: 'input',
+                message: 'What is the Title of the new role?',
+                },
+                {
+                name: 'salary',
+                type: 'input',
+                message: 'What is the Salary of the new role?',
+                },
+                {
+                name: 'dept_id',
+                type: 'list',
+                message: 'Which department is the new Role in?',
+                choices: departments
+                },
+            ])
+            .then((answer) => {
+                // console.log('answer:', answer)
+                
+                // when finished prompting, insert a new item into the db with that info
+                connection.query(
+                'INSERT INTO company_db.roles SET ?',
+                {
+                    title: answer.title,
+                    salary: answer.salary,
+                    dept_id: answer.dept_id
+                },
+                (err) => {
+                    if (err) throw err;
+                    console.log('The new Role was added successfully!');
+                    // re-prompt the user for if they want to complete another task
+                    runSearch();
+                }
+                );
+            });
         });
-
-        
-        });
-
-        
     };
 
     const viewDepartments = () => {

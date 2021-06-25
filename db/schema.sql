@@ -39,34 +39,37 @@ FOREIGN KEY (dept_id) REFERENCES departments(dept_id),
 PRIMARY KEY (emp_id)
 );
 
-USE company_db;
-INSERT INTO departments (name)
-VALUES ("Engineering"), ("Finance"), ("Legal"), ("Sales");
-
 -- USE company_db;
-INSERT INTO roles (title, salary, dept_id)
-VALUES ("Lead Engineer", 150000, 1), ("Sofware Engineer", 120000, 1), ("Finance Team Lead", 170000, 2), ("Accountant", 125000, 2), ("Legal Team Lead", 250000, 3), ("Lawyer", 190000, 3), ("Sales Lead", 100000, 4), ("Salesperson", 80000, 4);
+-- INSERT INTO departments (name)
+-- VALUES ("Engineering"), ("Finance"), ("Legal"), ("Sales");
 
--- USE company_db;
-INSERT INTO employees (first_name, last_name, manager_id, role_id, dept_id)
-VALUES ("Ashley", "Rodriguez", null, 1, 1), ("Malia", "Brown", null, 4, 2), ("Sarah", "Lourd", null, 5, 3), ("John", "Doe", 1, 7, 4), ("Kevin", "Tupik", 1, 2, 1), ("Tom", "Allen", 3, 6, 3), ("Mike", "Chan", 4, 8, 4), ("Tammer", "Galal", 5, 2, 1), ("Christian", "Eckenrode", 7, 1, 1);
+-- -- USE company_db;
+-- INSERT INTO roles (title, salary, dept_id)
+-- VALUES ("Lead Engineer", 150000, 1), ("Sofware Engineer", 120000, 1), ("Finance Team Lead", 170000, 2), ("Accountant", 125000, 2), ("Legal Team Lead", 250000, 3), ("Lawyer", 190000, 3), ("Sales Lead", 100000, 4), ("Salesperson", 80000, 4);
 
--- USE company_db;
-INSERT INTO employees (first_name, last_name, manager_id, role_id, dept_id)
-VALUES ("Ashley", "Rodriguez", null, 1, 1), ("Malia", "Brown", null, 4, 2), ("Sarah", "Lourd", null, 5, 3);
+-- -- USE company_db;
+-- INSERT INTO employees (first_name, last_name, manager_id, role_id, dept_id)
+-- VALUES ("Ashley", "Rodriguez", null, 1, 1), ("Malia", "Brown", null, 4, 2), ("Sarah", "Lourd", null, 5, 3), ("John", "Doe", 1, 7, 4), ("Kevin", "Tupik", 1, 2, 1), ("Tom", "Allen", 3, 6, 3), ("Mike", "Chan", 4, 8, 4), ("Tammer", "Galal", 5, 2, 1), ("Christian", "Eckenrode", 7, 1, 1);
 
 
--- USE company_db;
-INSERT INTO employees (first_name, last_name, manager_id, role_id, dept_id)
-VALUES ("John", "Doe", 1, 7, 4), ("Kevin", "Tupik", 1, 2, 1), ("Tom", "Allen", 3, 6, 3);
 
--- USE company_db;
-INSERT INTO employees (first_name, last_name, manager_id, role_id, dept_id)
-VALUES ("Mike", "Chan", 4, 8, 4), ("Tammer", "Galal", 5, 2, 1);
 
--- USE company_db;
-INSERT INTO employees (first_name, last_name, manager_id, role_id, dept_id)
-VALUES ("Christian", "Eckenrode", 7, 1, 1);
+-- -- USE company_db;
+-- INSERT INTO employees (first_name, last_name, manager_id, role_id, dept_id)
+-- VALUES ("Ashley", "Rodriguez", null, 1, 1), ("Malia", "Brown", null, 4, 2), ("Sarah", "Lourd", null, 5, 3);
+
+
+-- -- USE company_db;
+-- INSERT INTO employees (first_name, last_name, manager_id, role_id, dept_id)
+-- VALUES ("John", "Doe", 1, 7, 4), ("Kevin", "Tupik", 1, 2, 1), ("Tom", "Allen", 3, 6, 3);
+
+-- -- USE company_db;
+-- INSERT INTO employees (first_name, last_name, manager_id, role_id, dept_id)
+-- VALUES ("Mike", "Chan", 4, 8, 4), ("Tammer", "Galal", 5, 2, 1);
+
+-- -- USE company_db;
+-- INSERT INTO employees (first_name, last_name, manager_id, role_id, dept_id)
+-- VALUES ("Christian", "Eckenrode", 7, 1, 1);
 
 -- USE company_db;
 -- INSERT INTO employees (first_name, last_name, manager_id, role_id, dept_id)

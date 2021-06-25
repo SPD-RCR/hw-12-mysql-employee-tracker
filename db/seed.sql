@@ -1,8 +1,9 @@
 USE company_db;
+
 INSERT INTO departments (name)
 VALUES ("Engineering"), ("Finance"), ("Legal"), ("Sales");
 
-USE company_db;
+-- USE company_db;
 INSERT INTO roles (title, salary, dept_id)
 VALUES ("Lead Engineer", 150000, 1), ("Sofware Engineer", 120000, 1), ("Finance Team Lead", 170000, 2), ("Accountant", 125000, 2), ("Legal Team Lead", 250000, 3), ("Lawyer", 190000, 3), ("Sales Lead", 100000, 4), ("Salesperson", 80000, 4);
 
